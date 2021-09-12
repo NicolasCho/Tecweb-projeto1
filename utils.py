@@ -4,10 +4,13 @@ from database import Database, Note
 
 
 def extract_route(request):
-    splitted_request = request.split()
-    route = splitted_request[1]
-    route = route[1:]
-    return request.split()[1][1:]
+    #splitted_request = request.split()
+    #route = splitted_request[1]
+    #route = route[1:]
+    #return ''
+    #return route
+    return request[request.index('/')+1 : request.index('HTTP')-1]
+    #return request.split()[1][1:]
 
 def read_file(path):
     extension_list = ['.txt', '.html', '.css', '.js']
@@ -36,6 +39,10 @@ def load_template(template):
 def add_data(new_note):
     db = Database('notes')
     db.add(new_note)
+
+def update_data(note):
+    db = Database('notes')
+    db.update(note)
 
 def build_response(body='', code=200, reason='OK', headers=''):
     if headers == '':

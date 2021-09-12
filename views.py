@@ -1,11 +1,11 @@
-from utils import load_data, load_template, add_data, build_response
+from utils import load_data, load_template, add_data, build_response, update_data
 import urllib.parse
 from database import Database, Note
 
 def index(request):
     # A string de request sempre começa com o tipo da requisição (ex: GET, POST)
     if request.startswith('POST'):
-        
+        print('REQUISIÇÃO:', request)
         request = request.replace('\r', '')  # Remove caracteres indesejados
         # Cabeçalho e corpo estão sempre separados por duas quebras de linha
         partes = request.split('\n\n')
@@ -24,10 +24,15 @@ def index(request):
 
             params[chave] = valor
         
-        note = Note(title=params['titulo'], content=params['detalhes'])
+        #SE RECEBEU UM POST COM UM ID, ATUALIZAR O BANCO DE DADOS
+        if 'id' in params:
+            note = Note(id=params['id'], title=params['titulo'] ,content=params['detalhes'])
+            update_data(note)
         
-        # ADICIONANDO A NOTA NO BANCO DE DADOS
-        add_data(note)
+        #SE NÃO RECEBEU NENHUM ID, ADICIONAR AO BANCO DE DADOS
+        else:
+            note = Note(title=params['titulo'], content=params['detalhes'])
+            add_data(note)
 
         return build_response(code=303, reason='See Other', headers='Location: /')
     

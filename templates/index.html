@@ -41,9 +41,38 @@
         <button class="btn" type="submit">Criar</button>
       </form>
 
+      
+
       <div class="card-container">
         {notes}
       </div>
+
+      <div class="curtain">
+        <div class="edit-content"> 
+          <a id="exit-button" class="fecha-janela">
+            <img class="exit" src="../../img/exit.png" alt="Fechar">
+          </a>
+          <p class='texto'>
+            Editar nota
+          </p>
+          <form class="edit-form-card" method="POST">
+            <input id="hidden-id" type="hidden" value='None' name="id">
+            <input
+              class="edit-form-card-title"
+              type="text"
+              name="titulo"
+              placeholder="Título"
+            />
+            <textarea
+              class="edit-autoresize"
+              name="detalhes"
+              placeholder="Digite o conteúdo..."
+            ></textarea>
+            <button class="edit-btn-post" type="submit">Editar</button>
+          </form>
+        </div>
+      </div>
+      
     </main>
 
     <script type="text/javascript" src="../docs/getit.js"></script>

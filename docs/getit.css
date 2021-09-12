@@ -97,7 +97,7 @@ textarea{
 .card{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+ 
   padding: 0.4rem;
   margin: 0.5rem;
   width: 12rem;
@@ -113,11 +113,100 @@ textarea{
   
 }
 
+
 .card-content{
   align-self: center;
   font-size: 100%;
   color: #4c4c4c;
 }
+
+.btn-space{
+  margin-top: 0rem;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.edit-btn{
+  width: 1rem;
+  height: 1rem;
+}
+
+.delete-btn{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+}
+
+.curtain{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.edit-content{
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.exit{
+  width: 3rem;
+  height: 3rem;
+}
+
+.fecha-janela{
+  align-self: flex-end;
+}
+
+.edit-form-card{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+  border: black;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.5);
+}
+
+
+.edit-form-card-title{
+  margin-top: 0.5rem;
+  height: 1rem;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.edit-autoresize{
+  height: 5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.edit-btn-post{
+  display: block;
+  background-color: #f7d943;
+  border: none;
+  border-radius: 0.2rem;
+  height: 2rem;  
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+.texto{
+  margin-left: 3rem;
+}
+
 
 .card-color-1{
   background-color: #ead3a7;

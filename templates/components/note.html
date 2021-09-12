@@ -1,6 +1,15 @@
 <div class="card">
+    <div class='btn-space'>
+        <button class="edit-field" onclick="editNote({id})">
+            <img class="edit-btn" src="../../img/edit_button.png" alt="Editar nota">
+        </button>
+        <button id="delete">
+            <img class="delete-btn" src="../../img/delete_button.png" alt="Deletar nota">
+        </button>
+    </div>
     <h3 class="card-title">{title}</h3>
     <div class="card-content">
         <p>{details}</p>
     </div>
 </div>
+
