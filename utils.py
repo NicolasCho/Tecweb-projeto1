@@ -4,14 +4,12 @@ from database import Database, Note
 
 
 def extract_route(request):
-    #splitted_request = request.split()
-    #route = splitted_request[1]
-    #route = route[1:]
-    #return ''
-    #return route
-    return request[request.index('/')+1 : request.index('HTTP')-1]
-    #return request.split()[1][1:]
+    splitted_request = request.split()
+    route = splitted_request[1]
+    route = route[1:]
+    return route
 
+    
 def read_file(path):
     extension_list = ['.txt', '.html', '.css', '.js']
     extension = path.suffix 
