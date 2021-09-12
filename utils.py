@@ -44,6 +44,10 @@ def update_data(note):
     db = Database('notes')
     db.update(note)
 
+def delete_data(id):
+    db = Database('notes')
+    db.delete(id)
+
 def build_response(body='', code=200, reason='OK', headers=''):
     if headers == '':
         response = 'HTTP/1.1 ' + str(code) + ' ' + reason + '\n\n' + body

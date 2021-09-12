@@ -9,6 +9,10 @@ function editNote(id) {
   document.querySelector('.curtain').style.display ='flex';
 }
 
+function deleteNote(id) {
+  document.getElementById('delete-note-'+id).submit();
+}
+
 
 
 document.querySelector(".exit").addEventListener('click',

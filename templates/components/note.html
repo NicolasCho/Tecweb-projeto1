@@ -3,7 +3,7 @@
         <button class="edit-field" onclick="editNote({id})">
             <img class="edit-btn" src="../../img/edit_button.png" alt="Editar nota">
         </button>
-        <button id="delete">
+        <button class="delete-field" onclick="deleteNote({id})">
             <img class="delete-btn" src="../../img/delete_button.png" alt="Deletar nota">
         </button>
     </div>
@@ -11,5 +11,14 @@
     <div class="card-content">
         <p>{details}</p>
     </div>
+
+    <form id="delete-note-{id}" method="POST">
+        <input
+        id="delete-id"
+        name="deletar"
+        type="hidden"
+        value="{id}"
+      />
+    </form>   
 </div>
 

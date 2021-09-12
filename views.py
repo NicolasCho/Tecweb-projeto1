@@ -1,4 +1,4 @@
-from utils import load_data, load_template, add_data, build_response, update_data
+from utils import delete_data, load_data, load_template, add_data, build_response, update_data
 import urllib.parse
 from database import Database, Note
 
@@ -24,12 +24,14 @@ def index(request):
 
             params[chave] = valor
         
-        #SE RECEBEU UM POST COM UM ID, ATUALIZAR O BANCO DE DADOS
+        
         if 'id' in params:
             note = Note(id=params['id'], title=params['titulo'] ,content=params['detalhes'])
             update_data(note)
-        
-        #SE NÃO RECEBEU NENHUM ID, ADICIONAR AO BANCO DE DADOS
+      
+        elif 'deletar' in params:
+            delete_data(params['deletar'])
+     
         else:
             note = Note(title=params['titulo'], content=params['detalhes'])
             add_data(note)
